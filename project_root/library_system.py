@@ -1,10 +1,3 @@
-"""
-Library Management System - Library Module
------------------------------------------
-Current Date and Time (UTC): 2025-03-12 02:32:02
-Current User's Login: CenJi03
-"""
-
 import datetime
 import xlsxwriter
 
