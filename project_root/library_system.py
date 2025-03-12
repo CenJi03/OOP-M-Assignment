@@ -85,18 +85,18 @@ def display_bookInfo(book):
 
 # Function to add a book
 def addBook():
-    get_book_Isbn = get_input("- Enter book ISBN\t.\t.\t.\t.\t.\t.\t.\t.\t.\t.\t: ")
+    get_book_Isbn = get_input("- Enter book ISBN\t.\t.\t.\t.\t.\t: ")
     existing_book = find_book_by_isbn(get_book_Isbn)
     if existing_book:
-        print(f"- Book author.\t.\t.\t.\t.\t.\t.\t.\t.\t.\t.\t.\t: {existing_book.get_book_Author}")
-        print(f"- Book title.\t.\t.\t.\t.\t.\t.\t.\t.\t.\t.\t.\t: {existing_book.get_book_Title}")
-        get_book_newQuantity = get_input("- Enter additional quantity\t.\t.\t.\t.\t.\t.\t.\t.\t: ", int)
+        print(f"- Book author\t.\t.\t.\t.\t.\t: {existing_book.get_book_Author}")
+        print(f"- Book title\t.\t.\t.\t.\t.\t: {existing_book.get_book_Title}")
+        get_book_newQuantity = get_input("- Enter additional quantity\t.\t.\t.\t.\t.\t: ", int)
         existing_book.set_Transaction(get_book_newQuantity)  # Add a new transaction
         print("---> Book added to library successfully!\n")
     else:
-        get_book_Title = get_input("- Enter book title\t.\t.\t.\t.\t.\t.\t.\t.\t.\t.\t: ")
-        get_book_Author = get_input("- Enter book author\t.\t.\t.\t.\t.\t.\t.\t.\t.\t.\t: ")
-        get_book_oldQuantity = get_input("- Enter book quantity\t.\t.\t.\t.\t.\t.\t.\t.\t.\t: ", int)
+        get_book_Title = get_input("- Enter book title\t.\t.\t.\t.\t.\t: ")
+        get_book_Author = get_input("- Enter book author\t.\t.\t.\t.\t.\t: ")
+        get_book_oldQuantity = get_input("- Enter book quantity\t.\t.\t.\t.\t.\t: ", int)
         get_new_addBook = Library(get_book_Title, get_book_Author, get_book_Isbn)
         get_new_addBook.set_Transaction(get_book_oldQuantity)  # Add the initial transaction
         addBooks.append(get_new_addBook)
@@ -118,7 +118,7 @@ def checkLibrary():
 # Function to search for a book by ISBN
 def searchBook():
     while True:
-        get_book_Isbn = get_input("- Enter book ISBN to search\t.\t.\t.\t.\t.\t.\t.\t.\t: ")
+        get_book_Isbn = get_input("- Enter book ISBN to search\t.\t.\t.\t.\t.\t: ")
         if not get_book_Isbn:
             print("---> Invalid input, please try again.\n")
             continue
@@ -128,7 +128,7 @@ def searchBook():
             print(f"--->  BOOK ISBN --------> {book.get_book_Isbn} <--------")
             display_bookInfo(book)
             while True:
-                user_input = get_input("---> Enter 1 to continue searching or 0 to exit\t.\t.\t.\t: ")
+                user_input = get_input("---> Enter 1 to continue searching or 0 to exit: ")
                 print(' ')
                 if user_input in ["0", "1"]:
                     break
@@ -143,16 +143,16 @@ def searchBook():
 # Function to update book information
 def updateBook():
     while True:
-        book_Isbn = get_input("- Enter book ISBN to update.\t.\t.\t.\t.\t.\t.\t.\t: ")
+        book_Isbn = get_input("- Enter book ISBN to update\t.\t.\t.\t.\t.\t: ")
         book = find_book_by_isbn(book_Isbn)
         if book:
             print("\n\t\t\t   ------> Input New Information <------")
-            book.get_book_Isbn = get_input("- Enter new book ISBN\t.\t.\t.\t.\t.\t.\t.\t.\t.\t: ")
-            book.get_book_Title = get_input("- Enter new book title\t.\t.\t.\t.\t.\t.\t.\t.\t.\t: ")
-            book.get_book_Author = get_input("- Enter new book author\t.\t.\t.\t.\t.\t.\t.\t.\t.\t: ")
+            book.get_book_Isbn = get_input("- Enter new book ISBN\t.\t.\t.\t.\t.\t: ")
+            book.get_book_Title = get_input("- Enter new book title\t.\t.\t.\t.\t.\t: ")
+            book.get_book_Author = get_input("- Enter new book author\t.\t.\t.\t.\t.\t: ")
             print("---> Book updated successfully!\n")
             while True:
-                user_input = get_input("---> Enter 1 to continue updating or 0 to exit\t.\t.\t.\t: ")
+                user_input = get_input("---> Enter 1 to continue updating or 0 to exit: ")
                 print(' ')
                 if user_input in ["0", "1"]:
                     break
@@ -167,7 +167,7 @@ def updateBook():
 # Function to remove a book
 def removeBook():
     while True:
-        book_Isbn = get_input("- Enter book ISBN to remove\t.\t.\t.\t.\t.\t.\t.\t.\t: ")
+        book_Isbn = get_input("- Enter book ISBN to remove\t.\t.\t.\t.\t.\t: ")
         if not book_Isbn:
             print("---> Invalid input, please try again.\n")
             continue
@@ -246,18 +246,18 @@ def export_to_excel():
 def manageLibrary():
     while True:
         print(
-            "---------------------------------------------------------- LIBRARY MANAGEMENT ---------------------------------------------------------")
+            "===================================================== LIBRARY MANAGEMENT ====================================================")
         print(
             "\t1. ADD BOOK\t2. CHECK LIBRARY\t3. SEARCH BOOK\t4. UPDATE BOOK\t5. REMOVE BOOK\t6. EXPORT BOOKS\t7. EXIT")
         print(
-            "------------------------------------------------------------- INSTRUCTION -------------------------------------------------------------")
+            "======================================================== INSTRUCTION ========================================================")
 
-        option = get_input("---> Choose Your Option\t.\t.\t.\t.\t.\t.\t.\t.\t.\t: ", int, choices=range(1, 8))
+        option = get_input("---> Choose Your Option\t.\t.\t.\t.\t.\t: ", int, choices=range(1, 8))
         print(" ")
 
         if option == 1:
             print("\t\t\t   ------------> ADD BOOKS <------------")
-            num_books = get_input("- Enter number of books to add\t.\t.\t.\t.\t.\t.\t.\t: ", int)
+            num_books = get_input("- Enter number of books to add\t.\t.\t.\t.\t.\t: ", int)
             for i in range(num_books):
                 print(f"\n\t\t\t   --------> Enter Book {i + 1} Data <--------")
                 addBook()

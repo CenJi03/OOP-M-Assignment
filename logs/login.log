@@ -4,3 +4,27 @@
   IP Address	: 174.16.10.103
   Timestamp		: 2025-03-12 10:38:37
 
+2025-03-12 10:52:17,642 - Login Successful
+  Greeting		: Welcome, admin!
+  Account			: admin
+  IP Address	: 174.16.10.103
+  Timestamp		: 2025-03-12 10:52:17
+
+2025-03-12 10:52:56,090 - Login Successful
+  Greeting		: Welcome, admin!
+  Account			: admin
+  IP Address	: 174.16.10.103
+  Timestamp		: 2025-03-12 10:52:56
+
+2025-03-12 11:39:34,601 - Login Successful
+  Greeting		: Welcome, admin!
+  Account			: admin
+  IP Address	: 192.168.15.53
+  Timestamp		: 2025-03-12 11:39:34
+
+2025-03-12 12:32:33,668 - Login Failed
+  Error				: Login Failed: Invalid credentials.
+  Account			: 1
+  IP Address	: 174.16.10.80
+  Timestamp		: 2025-03-12 12:32:33
+

@@ -79,9 +79,9 @@ def authenticate_user():
     attempt = 0
     
     while attempt < max_attempts:
-        print('------------------------> DATA ENTRY <------------------------')
-        username = input("- Enter Username\t.\t.\t.\t: ")
-        password = input("- Enter Password\t.\t.\t.\t: ")
+        print('======================================================= LOGIN SYSTEM ========================================================')
+        username = input("- Enter Username\t.\t.\t.\t.\t.\t: ")
+        password = input("- Enter Password\t.\t.\t.\t.\t.\t: ")
         print('\t')
         
         # Authenticate the user
